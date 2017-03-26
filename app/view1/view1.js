@@ -9,12 +9,17 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', '$http', function($scope, $http) {
+.controller('View1Ctrl', ['$scope', '$http', 'RedditService', function($scope, $http, RedditService) {
+	$scope.headlines = [];
 
-	$http.get("https://www.reddit.com/r/nottheonion/new.json?sort=new&limit=10")
-    .success(function(response) {
-        $scope.headlines = response.data.children;
-        //get the Title with headline.data.title
-        //get the URL with headline.data.url
-    });
+	getHeadlines()
+
+	function getHeadlines (){
+		RedditService.getHeadlines()
+		.then(function(data){
+			$scope.headlines = data;
+		});
+		//"https://www.reddit.com/r/theonion/new.json?sort=new&limit=10"
+	}
+	
 }]);
