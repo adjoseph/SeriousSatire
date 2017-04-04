@@ -1,8 +1,8 @@
 angular.module('myApp')
 	.factory('RedditService', ['$http', function($http){
-		var headlines = [];
-		var getHeadlines = function(){
-			return $http.get("https://www.reddit.com/r/nottheonion/new.json?sort=new&limit=10")
+		var headlines = []; //try removing this line btw
+		var getHeadlines = function(url){
+			return $http.get(url)
 			.then(function(response){
 				//angular.forEach(response.data.children, function(c,i){
 					//headlines.push(c);
