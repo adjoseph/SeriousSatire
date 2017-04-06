@@ -15,6 +15,7 @@ angular.module('myApp.view1', ['ngRoute'])
 		RedditService.getHeadlines("https://www.reddit.com/r/nottheonion/new.json?sort=new&limit=10")
 		.then(function(posts){
 			for (var i = 0; i < posts.length; i++) {
+				posts[i].data.guessed = {didGuess:false,correct:null}; //add new property to track if the user has guessed for this headline yet
 				$scope.headlines.push(posts[i].data)
 			}
 		});
@@ -23,8 +24,10 @@ angular.module('myApp.view1', ['ngRoute'])
 		RedditService.getHeadlines("https://www.reddit.com/r/theonion/new.json?sort=new&limit=25")
 		.then(function(posts){
 			for (var i = 0; i < posts.length; i++) {
-				if(posts[i].data.domain == "theonion.com") //must filter out headlines not from the Onion
+				if(posts[i].data.domain == "theonion.com"){ //must filter out headlines not from the Onion
+					posts[i].data.guessed = {didGuess:false,correct:null}; //add new property to track if the user has guessed for this headline yet
 					$scope.headlines.push(posts[i].data)
+				}
 			}
 			console.log($scope.headlines); //use this to check how many total headlines before reducing
 				//make sure to delete this when you're satisfied it looks about equal usually
@@ -42,7 +45,7 @@ angular.module('myApp.view1', ['ngRoute'])
 		for (var i = 0; i < num; i++){
 			while(true){
 				var currentIndex = Math.floor(Math.random() * ($scope.headlines.length));
-				if(headlineIndices.indexOf(currentIndex) == -1){
+				if(headlineIndices.indexOf(currentIndex) == -1){ //check if already used this headline
 					tempHeadlines.push($scope.headlines[currentIndex]);
 					headlineIndices.push(currentIndex);
 					break;
@@ -57,4 +60,25 @@ angular.module('myApp.view1', ['ngRoute'])
 	$scope.receivedHeadlines = false; //view won't render until headlines received via http request
 
 	getHeadlines();
+
+	$scope.guess=function(headline,userGuess){
+		//check if userGuess is correct (ie: matches subreddit)
+		//toggle value in list to reflect if guess is true or not
+			//should this be new $scope value, or should i add a new property to the headline object if i can?
+		//in view it should have an ng-if to display the results.
+
+		console.log(headline.guessed);
+		if(userGuess == 'serious' && headline.subreddit == 'nottheonion'){
+			headline.guessed = {didGuess:true,correct:true};
+		}
+		else if(userGuess == 'serious' && headline.subreddit == 'TheOnion'){
+			headline.guessed = {didGuess:true,correct:false};
+		}
+		else if(userGuess == 'satire' && headline.subreddit == 'nottheonion'){
+			headline.guessed = {didGuess:true,correct:false};
+		}
+		else if(userGuess == 'satire' && headline.subreddit == 'TheOnion'){
+			headline.guessed = {didGuess:true,correct:true};
+		}
+	}
 }]);
