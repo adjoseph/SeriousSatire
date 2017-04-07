@@ -58,6 +58,8 @@ angular.module('myApp.view1', ['ngRoute'])
 	$scope.headlines = [];
 	$scope.numHeadlines = 6; //6 headlines per game, use this number to reduce total pool of headlines
 	$scope.receivedHeadlines = false; //view won't render until headlines received via http request
+	$scope.numberGuessed = 0;
+	$scope.numberCorrect = 0;
 
 	getHeadlines();
 
@@ -67,9 +69,12 @@ angular.module('myApp.view1', ['ngRoute'])
 			//should this be new $scope value, or should i add a new property to the headline object if i can?
 		//in view it should have an ng-if to display the results.
 
-		console.log(headline.guessed);
+		$scope.numberGuessed++;
+
+		console.log($scope.numberGuessed + " " + $scope.numHeadlines);
 		if(userGuess == 'serious' && headline.subreddit == 'nottheonion'){
 			headline.guessed = {didGuess:true,correct:true};
+			$scope.numberCorrect++;
 		}
 		else if(userGuess == 'serious' && headline.subreddit == 'TheOnion'){
 			headline.guessed = {didGuess:true,correct:false};
@@ -79,6 +84,7 @@ angular.module('myApp.view1', ['ngRoute'])
 		}
 		else if(userGuess == 'satire' && headline.subreddit == 'TheOnion'){
 			headline.guessed = {didGuess:true,correct:true};
+			$scope.numberCorrect++;
 		}
 	}
 }]);
