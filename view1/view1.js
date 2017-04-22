@@ -71,7 +71,6 @@ angular.module('myApp.view1', ['ngRoute'])
 
 		$scope.numberGuessed++;
 
-		console.log($scope.numberGuessed + " " + $scope.numHeadlines);
 		if(userGuess == 'serious' && headline.subreddit == 'nottheonion'){
 			headline.guessed = {didGuess:true,correct:true};
 			$scope.numberCorrect++;
@@ -86,5 +85,6 @@ angular.module('myApp.view1', ['ngRoute'])
 			headline.guessed = {didGuess:true,correct:true};
 			$scope.numberCorrect++;
 		}
+		console.log($scope.numberGuessed + " " + $scope.numHeadlines);
 	}
 }]);
