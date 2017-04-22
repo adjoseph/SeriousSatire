@@ -1,5 +1,9 @@
 /* app css stylesheet */
 
+ul{
+	list-style: none;
+	padding: 0;
+}
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -22,4 +26,12 @@
 .menu > li + li:before {
   content: "|";
   padding-right: 0.3em;
+}
+
+.headline_card{
+	padding: 10px;
+}
+
+.guess_results{
+	margin: 10px;
 }

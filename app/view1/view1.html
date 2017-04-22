@@ -1,17 +1,17 @@
 <ul ng-show="receivedHeadlines">
 	<li ng-repeat="headline in headlines">
-		<div class="headline_card">
+		<md-card class="headline_card" md-whiteframe="5">
 			{{headline.title}} ({{headline.subreddit}})
 			<div class="guess_buttons" ng-show="headline.guessed.didGuess == false">
-				<button ng-click="guess(headline,'serious')">Serious</button> 
-				<button ng-click="guess(headline,'satire')">Satire</button>
+				<md-button ng-click="guess(headline,'serious')">Serious</md-button> 
+				<md-button ng-click="guess(headline,'satire')">Satire</md-button>
 			</div>
 
 			<div class="guess_results" ng-show="headline.guessed.didGuess">
 				<div class="correct_guess" ng-show="headline.guessed.correct">correct!</div>
 				<div class="incorrect_guess" ng-show="headline.guessed.correct == false">WRONG!</div>
 			</div>
-		</div>
+		</md-card>
 	</li>
 
 	<div class="overall_results" ng-show="numberGuessed == numHeadlines">
