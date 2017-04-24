@@ -1,15 +1,20 @@
 <ul ng-show="receivedHeadlines">
 	<li ng-repeat="headline in headlines">
-		<md-card class="headline_card" md-whiteframe="5">
-			{{headline.title}} ({{headline.subreddit}})
+		<md-card class="headline_card" md-whiteframe="5" layout="row">
+			{{headline.title}} {{headline.subreddit}}
 			<div class="guess_buttons" ng-show="headline.guessed.didGuess == false">
-				<md-button ng-click="guess(headline,'serious')">Serious</md-button> 
-				<md-button ng-click="guess(headline,'satire')">Satire</md-button>
+				<md-button class="serious_button md-raised" ng-click="guess(headline,'serious')">Serious</md-button> 
+				<md-button class="satire_button md-raised" ng-click="guess(headline,'satire')">Satire</md-button>
 			</div>
 
 			<div class="guess_results" ng-show="headline.guessed.didGuess">
-				<div class="correct_guess" ng-show="headline.guessed.correct">correct!</div>
-				<div class="incorrect_guess" ng-show="headline.guessed.correct == false">WRONG!</div>
+				<span class="correct_guess" ng-show="headline.guessed.correct">correct!</span>
+				<span class="incorrect_guess" ng-show="headline.guessed.correct == false">WRONG!</span>
+				<span class="actual_answer" ng-show="headline.subreddit == 'TheOnion'"> - satire</span>
+				<span class="actual_answer" ng-show="headline.subreddit == 'nottheonion'"> - serious</span>
+
+				<md-button ng-href="{{headline.url}}" target="_blank">article</md-button>
+				<md-button ng-href="https://reddit.com{{headline.permalink}}" target="_blank">comments</md-button>
 			</div>
 		</md-card>
 	</li>

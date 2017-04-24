@@ -4,6 +4,11 @@ ul{
 	list-style: none;
 	padding: 0;
 }
+
+.serious_button{
+	background-color: #00BCD4 !important;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -30,8 +35,10 @@ ul{
 
 .headline_card{
 	padding: 10px;
+	font-size: .90em;
 }
 
 .guess_results{
 	margin: 10px;
+	text-align: center;
 }
