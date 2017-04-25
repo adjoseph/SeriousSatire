@@ -1,7 +1,7 @@
 <ul ng-show="receivedHeadlines">
 	<li ng-repeat="headline in headlines">
-		<md-card class="headline_card" md-whiteframe="5" layout="row">
-			{{headline.title}} {{headline.subreddit}}
+		<md-card class="headline_card" ng-class="[{true: 'md-whiteframe-2dp', false: 'md-whiteframe-5dp'}[headline.guessed.didGuess], {true: 'guessed-correct', false: 'guessed-wrong'}[headline.guessed.correct]]" layout="row">
+			{{headline.title}}
 			<div class="guess_buttons" ng-show="headline.guessed.didGuess == false">
 				<md-button class="serious_button md-raised" ng-click="guess(headline,'serious')">Serious</md-button> 
 				<md-button class="satire_button md-raised" ng-click="guess(headline,'satire')">Satire</md-button>
