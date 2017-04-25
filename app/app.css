@@ -42,3 +42,11 @@ ul{
 	margin: 10px;
 	text-align: center;
 }
+
+.guessed-correct{
+	background-color: #00BCD4 !important;
+}
+
+.guessed-wrong{
+	background-color: #FF9800 !important;
+}
