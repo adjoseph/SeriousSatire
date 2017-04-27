@@ -1,12 +1,26 @@
 /* app css stylesheet */
 
+body{
+	background-color: #EEEEEE;
+}
+
 ul{
 	list-style: none;
 	padding: 0;
 }
 
+md-button{
+	font-family: 'Roboto', sans-serif !important;
+}
+
+
 .serious_button{
 	background-color: #00BCD4 !important;
+	float: right;
+}
+
+.satire_button{
+	float: right;
 }
 
 .menu {
@@ -35,12 +49,30 @@ ul{
 
 .headline_card{
 	padding: 10px;
-	font-size: .90em;
+	font-size: 110%;
+}
+
+.headline_title{
+	text-align: center;
+	padding-top: 30px;
+  	padding-bottom: 30px;
+  	width: 70%;
+  	font-family: 'Crimson Text', serif;
+}
+
+.guess_buttons{
+	padding-top: 30px;
+  	padding-bottom: 30px;
+  	margin-left: auto;
+  	margin-right: 0;
 }
 
 .guess_results{
-	margin: 10px;
-	text-align: center;
+	padding-top: 30px;
+  	padding-bottom: 30px;
+  	margin-left: auto;
+  	margin-right: 0;
+  	text-align: right;
 }
 
 .guessed-correct{

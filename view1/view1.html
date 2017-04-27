@@ -1,13 +1,13 @@
-<ul ng-show="receivedHeadlines">
+<ul ng-show="receivedHeadlines" layout-sm="column">
 	<li ng-repeat="headline in headlines">
-		<md-card class="headline_card" ng-class="[{true: 'md-whiteframe-2dp', false: 'md-whiteframe-5dp'}[headline.guessed.didGuess], {true: 'guessed-correct', false: 'guessed-wrong'}[headline.guessed.correct]]" layout="row">
-			{{headline.title}}
-			<div class="guess_buttons" ng-show="headline.guessed.didGuess == false">
+		<md-card class="headline_card" ng-class="[{true: 'md-whiteframe-2dp', false: 'md-whiteframe-5dp'}[headline.guessed.didGuess], {true: 'guessed-correct', false: 'guessed-wrong'}[headline.guessed.correct]]" >
+			<span flex="66" class="headline_title">{{headline.title}}</span>
+			<span flex="33" class="guess_buttons" ng-show="headline.guessed.didGuess == false">
 				<md-button class="serious_button md-raised" ng-click="guess(headline,'serious')">Serious</md-button> 
 				<md-button class="satire_button md-raised" ng-click="guess(headline,'satire')">Satire</md-button>
-			</div>
+			</span>
 
-			<div class="guess_results" ng-show="headline.guessed.didGuess">
+			<span flex="33" class="guess_results" ng-show="headline.guessed.didGuess">
 				<span class="correct_guess" ng-show="headline.guessed.correct">correct!</span>
 				<span class="incorrect_guess" ng-show="headline.guessed.correct == false">WRONG!</span>
 				<span class="actual_answer" ng-show="headline.subreddit == 'TheOnion'"> - satire</span>
@@ -15,7 +15,7 @@
 
 				<md-button ng-href="{{headline.url}}" target="_blank">article</md-button>
 				<md-button ng-href="https://reddit.com{{headline.permalink}}" target="_blank">comments</md-button>
-			</div>
+			</span>
 		</md-card>
 	</li>
 
