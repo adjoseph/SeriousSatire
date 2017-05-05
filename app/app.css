@@ -1,7 +1,6 @@
 /* app css stylesheet */
 
 body{
-	background-color: #EEEEEE;
 }
 
 ul{
@@ -14,14 +13,9 @@ md-button{
 }
 
 
-.serious_button{
-	background-color: #00BCD4 !important;
-	float: right;
-}
+.serious_button{}
 
-.satire_button{
-	float: right;
-}
+.satire_button{}
 
 .menu {
   list-style: none;
@@ -47,32 +41,31 @@ md-button{
   padding-right: 0.3em;
 }
 
-.headline_card{
-	padding: 10px;
-	font-size: 110%;
+.headline_container{
+	height: 215px;
+	width: 320px;
 }
 
 .headline_title{
-	text-align: center;
-	padding-top: 30px;
-  	padding-bottom: 30px;
-  	width: 70%;
+	height: 130px;
   	font-family: 'Crimson Text', serif;
 }
 
+.title{
+	padding: 20px;
+}
+
 .guess_buttons{
-	padding-top: 30px;
-  	padding-bottom: 30px;
-  	margin-left: auto;
-  	margin-right: 0;
+	/*padding-top: 30px;
+  	padding-bottom: 30px;*/
 }
 
 .guess_results{
-	padding-top: 30px;
+	/*padding-top: 30px;
   	padding-bottom: 30px;
   	margin-left: auto;
   	margin-right: 0;
-  	text-align: right;
+  	text-align: right;*/
 }
 
 .guessed-correct{
