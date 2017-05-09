@@ -1,9 +1,9 @@
-<div ng-show="receivedHeadlines">
-	<div ng-repeat="headline in headlines" class="headline_container" >
+<div class="main" ng-show="receivedHeadlines" layout="row">
+	<div ng-repeat="headline in headlines" class="headline_container">
 		<md-card class="headline_title"  ng-class="{true: 'md-whiteframe-2dp', false: 'md-whiteframe-5dp'}[headline.guessed.didGuess]">
 			<span class="title">{{headline.title}}</span>
 		</md-card>
-		<span>
+		<span class="control_buttons">
 			<span class="guess_buttons" ng-show="headline.guessed.didGuess == false">
 				<md-button class="serious_button md-raised" ng-click="guess(headline,'serious')">Serious</md-button> 
 				<md-button class="satire_button md-raised" ng-click="guess(headline,'satire')">Satire</md-button>
