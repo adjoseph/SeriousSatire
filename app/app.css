@@ -9,10 +9,14 @@ ul{
 }
 
 md-button{
-	font-family: 'Roboto', sans-serif !important;
 }
 
-
+.main{
+	flex-wrap: wrap;
+	justify-content: center;
+  	flex-direction: column;
+	text-align: center;
+}
 .serious_button{}
 
 .satire_button{}
@@ -48,11 +52,24 @@ md-button{
 
 .headline_title{
 	height: 130px;
+	font-size: 1.15em;
   	font-family: 'Crimson Text', serif;
+  	font-weight: bold;
+  	display: flex;
+  	justify-content: center;
+  	flex-direction: column;
+  	text-align: center;
 }
 
 .title{
 	padding: 20px;
+}
+
+.control_buttons{
+	display: flex;
+  	justify-content: center;
+  	flex-direction: column;
+  	text-align: center;
 }
 
 .guess_buttons{
