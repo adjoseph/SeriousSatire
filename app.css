@@ -1,11 +1,7 @@
 /* app css stylesheet */
 
 body{
-}
-
-ul{
-	list-style: none;
-	padding: 0;
+	background-color: #F5F5F5;
 }
 
 md-button{
@@ -22,27 +18,16 @@ md-button{
 .satire_button{}
 
 .menu {
-  list-style: none;
   border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
+  margin-bottom: 1em;
+  padding: 0.5em 0.5em 0.5em;
+  background-color: #424242;
+  margin-top: 0px;
 
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+  color: #FAFAFA;
+  font-family: 'Taviraj', serif;
+  font-size: 150%;
+  text-align: center;
 }
 
 .headline_container{
@@ -53,7 +38,8 @@ md-button{
 .headline_title{
 	height: 130px;
 	font-size: 1.15em;
-  	font-family: 'Crimson Text', serif;
+  	font-family: 'Taviraj', serif;
+  	color: #333333;
   	font-weight: bold;
   	display: flex;
   	justify-content: center;
@@ -73,16 +59,11 @@ md-button{
 }
 
 .guess_buttons{
-	/*padding-top: 30px;
-  	padding-bottom: 30px;*/
+
 }
 
 .guess_results{
-	/*padding-top: 30px;
-  	padding-bottom: 30px;
-  	margin-left: auto;
-  	margin-right: 0;
-  	text-align: right;*/
+
 }
 
 .guessed-correct{
