@@ -9,7 +9,7 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', '$http', 'RedditService', function($scope, $http, RedditService) {
+.controller('View1Ctrl', ['$scope', '$http', '$anchorScroll', '$location', 'RedditService', function($scope, $http, $anchorScroll, $location, RedditService) {
 	function getHeadlines (){
 		//get nottheonion (serious) headlines
 		RedditService.getHeadlines("https://www.reddit.com/r/nottheonion/new.json?sort=new&limit=10")
@@ -62,6 +62,14 @@ angular.module('myApp.view1', ['ngRoute'])
 	$scope.numberCorrect = 0;
 
 	getHeadlines();
+
+	//not working yet
+	if ($scope.numberGuessed == $scope.numHeadlines){
+			console.log("poop")
+			$location.hash('overall_results_container');
+			$anchorScroll();
+		}
+
 
 	$scope.guess=function(headline,userGuess){
 		//check if userGuess is correct (ie: matches subreddit)
