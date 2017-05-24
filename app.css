@@ -45,6 +45,8 @@ md-button{
   	justify-content: center;
   	flex-direction: column;
   	text-align: center;
+
+  	transition: .5s;
 }
 
 .title{
@@ -59,17 +61,62 @@ md-button{
 }
 
 .guess_buttons{
-
 }
 
 .guess_results{
-
 }
 
 .guessed-correct{
-	background-color: #00BCD4 !important;
+	background-color: #00BCD4;
+	color:#FAFAFA;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
 .guessed-wrong{
-	background-color: #FF9800 !important;
+	background-color: #FF9800;
+	color:#FAFAFA;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+#overall_results_container{
+	display: flex;
+  	justify-content: center;
+}
+
+.overall_results{
+	background-color: #00BCD4;
+	font-size: 2em;
+	font-weight: bold;
+	color:#FAFAFA;
+	height: 215px;
+	width: 215px;
+	display: flex;
+  	justify-content: center;
+  	flex-direction: column;
+  	text-align: center;
+
+  	-moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+
+
+.fade-in {
+  -webkit-transition: .25s linear all;
+  transition: .25s linear all;
+}
+.fade-in.ng-enter {
+  opacity: 0;
+}
+.fade-in.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.fade-in.ng-leave {
+  opacity: 1;
+}
+.fade-in.ng-leave.ng-leave-active {
+  opacity: 0;
 }
