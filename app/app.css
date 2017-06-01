@@ -10,12 +10,12 @@ a{
 }
 
 .main{
-	flex-wrap: wrap;
-	justify-content: center;
-  flex-direction: column;
-	text-align: center;
+flex-wrap: wrap;
+justify-content: center;
+flex-direction: column;
+text-align: center;
 
-  margin-top: 1em;
+margin-top: 1em;
 }
 .serious_button{}
 
@@ -36,13 +36,29 @@ a{
 #title_screen{
   color: #FAFAFA;
   background-color: #424242;
-
   height:100vh;
+  
+  text-align:center;
+}
+
+#welcome{
+	font-size: 2em;
+	padding: 20px;
+}
+
+.rules{
+	font-size: 1.5em;
+	padding: 20px;
+}
+
+#begin_button{
+	font-size: 1.5em;
 }
 
 .headline_container{
 	height: 215px;
 	width: 320px;
+	padding: 20px;
 }
 
 .headline_title{
