@@ -1,17 +1,21 @@
 /* app css stylesheet */
-
 body{
 	background-color: #F5F5F5;
 }
 
-md-button{
+
+a{
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
 }
 
 .main{
 	flex-wrap: wrap;
 	justify-content: center;
-  	flex-direction: column;
+  flex-direction: column;
 	text-align: center;
+
+  margin-top: 1em;
 }
 .serious_button{}
 
@@ -19,7 +23,6 @@ md-button{
 
 .menu {
   border-bottom: 0.1em solid black;
-  margin-bottom: 1em;
   padding: 0.5em 0.5em 0.5em;
   background-color: #424242;
   margin-top: 0px;
@@ -28,6 +31,13 @@ md-button{
   font-family: 'Taviraj', serif;
   font-size: 150%;
   text-align: center;
+}
+
+#title_screen{
+  color: #FAFAFA;
+  background-color: #424242;
+
+  height:100vh;
 }
 
 .headline_container{
